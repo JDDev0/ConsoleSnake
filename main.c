@@ -534,6 +534,7 @@ void updateSnake(void) {
                     drawHeadAgain = 1;
                     break;
                 }
+                /* no break */
             case WALL:
                 if(notGameOverAdditionalReactionMove) {
                     screen = GAME_OVER;
@@ -591,8 +592,10 @@ void updateSnake(void) {
                 timerInsect = 0;
                 gameField.insectPos[0] = -1;
                 gameField.insectPos[1] = -1;
+                /* no break */
             case BLUEBERRY:
                 score += 10; //Wil be += 20
+                /* no break */
             case APPLE:
                 //oldPosX, oldPosY: Pos for new body of snake
                 gameField.field[oldPosX][oldPosY] = SNAKE;
