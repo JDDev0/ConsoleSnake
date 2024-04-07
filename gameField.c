@@ -51,7 +51,7 @@ char getCharFromField(struct field *field, int x, int y) {
         case SNAKE:
             for(int i = 0;i < field->snakeSize;i++) {
                 if(field->snakePos[i][0] == x && field->snakePos[i][1] == y) {
-                    setColor(CL_COLOR_LIGHT_GREEN, CL_COLOR_GREEN);
+                    setColor(CL_COLOR_WHITE, CL_COLOR_GREEN);
 
                     if(i == 0)
                         return '@';

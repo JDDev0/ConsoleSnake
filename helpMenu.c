@@ -295,7 +295,7 @@ void drawHelp(void) {
             setCursorPos(30, 18);
             drawf("%%");
 
-            setColor(CL_COLOR_LIGHT_GREEN, CL_COLOR_GREEN);
+            setColor(CL_COLOR_WHITE, CL_COLOR_GREEN);
             setCursorPos(7, 19);
             drawf("@");
             setCursorPos(9, 19);
