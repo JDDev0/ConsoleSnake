@@ -416,47 +416,47 @@ void updateSnake(void) {
             timerInsect = 0;
 
             int alreadyCheck = 0;
-			do {
-				oldPosX = gameField.insectPos[0];
-				oldPosY = gameField.insectPos[1];
+            do {
+                oldPosX = gameField.insectPos[0];
+                oldPosY = gameField.insectPos[1];
 
-				//Everything was checked but no EMPTY field -> no movement
-				if(alreadyCheck == 15)
-					break;
+                //Everything was checked but no EMPTY field -> no movement
+                if(alreadyCheck == 15)
+                    break;
 
-				moveInsect = rand()%4;
+                moveInsect = rand()%4;
 
-				switch(moveInsect) {
-					case LEFT:
-						oldPosX--;
-						if(oldPosX < 0)
-							oldPosX = gameField.width - 1;
+                switch(moveInsect) {
+                    case LEFT:
+                        oldPosX--;
+                        if(oldPosX < 0)
+                            oldPosX = gameField.width - 1;
 
-						alreadyCheck |= 1;
-						break;
-					case UP:
-						oldPosY--;
-						if(oldPosY < 0)
-							oldPosY = gameField.height - 1;
+                        alreadyCheck |= 1;
+                        break;
+                    case UP:
+                        oldPosY--;
+                        if(oldPosY < 0)
+                            oldPosY = gameField.height - 1;
 
-						alreadyCheck |= 2;
-						break;
-					case RIGHT:
-						oldPosX++;
-						if(oldPosX >= gameField.width)
-							oldPosX = 0;
+                        alreadyCheck |= 2;
+                        break;
+                    case RIGHT:
+                        oldPosX++;
+                        if(oldPosX >= gameField.width)
+                            oldPosX = 0;
 
-						alreadyCheck |= 4;
-						break;
-					case DOWN:
-						oldPosY++;
-						if(oldPosY >= gameField.height)
-							oldPosY = 0;
+                        alreadyCheck |= 4;
+                        break;
+                    case DOWN:
+                        oldPosY++;
+                        if(oldPosY >= gameField.height)
+                            oldPosY = 0;
 
-						alreadyCheck |= 8;
-						break;
-				}
-			}while(gameField.field[oldPosX][oldPosY] != EMPTY);
+                        alreadyCheck |= 8;
+                        break;
+                }
+            }while(gameField.field[oldPosX][oldPosY] != EMPTY);
             gameField.field[gameField.insectPos[0]][gameField.insectPos[1]] = EMPTY;
             gameField.field[oldPosX][oldPosY] = INSECT;
             gameField.insectPos[0] = oldPosX;

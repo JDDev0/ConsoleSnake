@@ -5,8 +5,8 @@
     };
     
     enum direction {
-    	LEFT, UP, RIGHT, DOWN
-	};
+        LEFT, UP, RIGHT, DOWN
+    };
 
     struct field {
         int width;
